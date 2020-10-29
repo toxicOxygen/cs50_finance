@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+    <p class="lead">A share of {{data["name"]}} ({{data["symbol"]}}) costs ${{data["price"]}}. </p>
+{% endblock %}

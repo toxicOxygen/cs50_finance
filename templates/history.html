@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+
+{% block main %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Symbol</th>
+      <th scope="col">Shares</th>
+      <th>Price</th>
+      <th scope="col">Description</th>
+      <th scope="col">Transacted</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}
+        <tr>
+            <th scope="row">{{ row["symbol"] }}</th>
+            <td>{{ row["qty"] }}</td>
+            <td>${{ row["amount"] }}</td>
+            <td>{{ row["description"] }}</td>
+            <td>{{ row["date"]|cvt_time}}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
